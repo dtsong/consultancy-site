@@ -1,65 +1,216 @@
-import Image from "next/image";
+import { Container } from "@/components/Container";
+import { Button } from "@/components/Button";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Card } from "@/components/Card";
+
+export const metadata = {
+  title: "Klearpath — Enterprise Data Engineering & Security Consultancy",
+};
+
+const services = [
+  {
+    title: "Data Engineering",
+    description:
+      "Design and build scalable data platforms on Azure that your team can operate with confidence.",
+    icon: (
+      <svg
+        width={48}
+        height={48}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <ellipse cx={24} cy={12} rx={14} ry={5} />
+        <path d="M10 12v12c0 2.76 6.27 5 14 5s14-2.24 14-5V12" />
+        <path d="M10 24v12c0 2.76 6.27 5 14 5s14-2.24 14-5V24" />
+      </svg>
+    ),
+  },
+  {
+    title: "Security & Compliance",
+    description:
+      "Implement security frameworks that protect sensitive data and satisfy auditors.",
+    icon: (
+      <svg
+        width={48}
+        height={48}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path d="M24 4L6 12v12c0 11.1 7.68 21.48 18 24 10.32-2.52 18-12.9 18-24V12L24 4z" />
+        <path d="M17 24l5 5 10-10" />
+      </svg>
+    ),
+  },
+  {
+    title: "AI-Accelerated Delivery",
+    description:
+      "Integrate AI into your delivery workflows to ship faster without sacrificing rigor.",
+    icon: (
+      <svg
+        width={48}
+        height={48}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path d="M28 4L12 28h12L20 44l16-24H24L28 4z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Microsoft Platform",
+    description:
+      "Unlock the full potential of your Microsoft licensing and technology investment.",
+    icon: (
+      <svg
+        width={48}
+        height={48}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <rect x={6} y={6} width={16} height={16} rx={2} />
+        <rect x={26} y={6} width={16} height={16} rx={2} />
+        <rect x={6} y={26} width={16} height={16} rx={2} />
+        <rect x={26} y={26} width={16} height={16} rx={2} />
+      </svg>
+    ),
+  },
+];
+
+const differentiators = [
+  {
+    label: "01",
+    title: "Enterprise Experience",
+    description:
+      "Our engineers have built data platforms for Fortune 500 organizations processing billions of records. We understand the complexity of enterprise environments.",
+  },
+  {
+    label: "02",
+    title: "AI-Accelerated",
+    description:
+      "We use AI tools in our own delivery work daily. We help you adopt AI where it genuinely helps — and avoid the hype-driven implementations that don't.",
+  },
+  {
+    label: "03",
+    title: "Microsoft-Native",
+    description:
+      "Deep specialization across Azure, M365, Power Platform, and Dynamics. We're not generalists stretching into Microsoft — it's all we do.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <>
+      {/* Hero Section */}
+      <section className="bg-offwhite bg-hero-pattern py-24 md:py-32 lg:py-40">
+        <Container>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-navy max-w-4xl leading-tight">
+            Enterprise data platforms, built with precision.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg md:text-xl text-slate-mid mt-6 max-w-2xl leading-relaxed">
+            Klearpath helps enterprise organizations design, secure, and
+            optimize their data infrastructure on the Microsoft stack.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          <div className="flex gap-4 mt-10">
+            <Button variant="primary" href="/services">
+              Explore Our Services
+            </Button>
+            <Button variant="outline" href="/contact">
+              Get in Touch
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-20 bg-white">
+        <Container>
+          <SectionHeading
+            title="What We Do"
+            subtitle="End-to-end data engineering and security for organizations that run on Microsoft."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service) => (
+              <Card
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                icon={service.icon}
+                href="/services"
+              />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Why Us Section */}
+      <section className="py-20 bg-offwhite bg-grid-pattern">
+        <Container>
+          <SectionHeading
+            title="Why Klearpath"
+            subtitle="We bring deep Microsoft expertise and pragmatic AI adoption to enterprise data challenges."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {differentiators.map((item) => (
+              <div key={item.title}>
+                <span className="text-teal text-4xl font-heading font-bold">
+                  {item.label}
+                </span>
+                <h3 className="text-xl font-heading font-semibold text-navy mt-4 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate-mid leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-16 bg-white border-y border-gray-100">
+        <Container>
+          <p className="text-sm font-medium text-slate-light uppercase tracking-widest mb-10 text-center">
+            Trusted by enterprise teams across industries
+          </p>
+          <div className="flex flex-wrap justify-center gap-8">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div
+                key={i}
+                className="h-10 w-32 bg-gray-100 rounded-md inline-flex items-center justify-center text-slate-light text-xs"
+              >
+                Logo
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Bottom CTA Section */}
+      <section className="py-20 bg-navy bg-grid-pattern-dark text-white text-center">
+        <Container>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
+            Ready to transform your data infrastructure?
+          </h2>
+          <p className="text-lg text-slate-light mt-4 max-w-2xl mx-auto">
+            Let&apos;s discuss how Klearpath can help your organization build a
+            data platform that lasts.
+          </p>
+          <div className="mt-8">
+            <Button variant="primary" href="/contact">
+              Start a Conversation
+            </Button>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }

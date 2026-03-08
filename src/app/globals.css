@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors */
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
+  --color-slate-dark: #334155;
+  --color-slate-mid: #475569;
+  --color-slate-light: #94a3b8;
+  --color-teal: #0d9488;
+  --color-teal-light: #14b8a6;
+  --color-teal-dark: #0f766e;
+  --color-offwhite: #f8fafc;
+  --color-white: #ffffff;
+
+  /* Fonts */
+  --font-heading: var(--font-dm-sans);
+  --font-body: var(--font-source-sans);
+
+  /* Breakpoints */
+  --breakpoint-xs: 475px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --grid-pattern-color: rgba(15, 23, 42, 0.04);
+  --grid-pattern-size: 40px;
+  --node-dot-color: rgba(13, 148, 136, 0.15);
 }
 
+/* Base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  color: var(--color-slate-dark);
+  line-height: 1.7;
+  background-color: var(--color-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  color: var(--color-navy);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Geometric grid background pattern */
+.bg-grid-pattern {
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--node-dot-color) 1px, transparent 0),
+    linear-gradient(to right, var(--grid-pattern-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-pattern-color) 1px, transparent 1px);
+  background-size:
+    var(--grid-pattern-size) var(--grid-pattern-size),
+    var(--grid-pattern-size) var(--grid-pattern-size),
+    var(--grid-pattern-size) var(--grid-pattern-size);
+}
+
+/* Subtle node connection pattern for hero sections */
+.bg-hero-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(13, 148, 136, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(13, 148, 136, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 1px 1px, var(--node-dot-color) 1.5px, transparent 0),
+    linear-gradient(to right, var(--grid-pattern-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-pattern-color) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    100% 100%,
+    var(--grid-pattern-size) var(--grid-pattern-size),
+    var(--grid-pattern-size) var(--grid-pattern-size),
+    var(--grid-pattern-size) var(--grid-pattern-size);
+}
+
+/* Dark section variant */
+.bg-grid-pattern-dark {
+  --grid-pattern-color: rgba(255, 255, 255, 0.06);
+  --node-dot-color: rgba(20, 184, 166, 0.2);
+  background-image:
+    radial-gradient(circle at 1px 1px, var(--node-dot-color) 1px, transparent 0),
+    linear-gradient(to right, var(--grid-pattern-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-pattern-color) 1px, transparent 1px);
+  background-size:
+    var(--grid-pattern-size) var(--grid-pattern-size),
+    var(--grid-pattern-size) var(--grid-pattern-size),
+    var(--grid-pattern-size) var(--grid-pattern-size);
+}
+
+/* Typography for MDX content */
+.prose h2 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  color: var(--color-navy);
+  margin-top: 2.5em;
+}
+
+.prose h3 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  color: var(--color-navy);
+}
+
+.prose a {
+  color: var(--color-teal-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-teal);
+}
+
+.prose strong {
+  color: var(--color-navy);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
 }

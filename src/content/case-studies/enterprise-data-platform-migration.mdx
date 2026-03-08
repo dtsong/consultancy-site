@@ -1,0 +1,42 @@
+---
+title: "Enterprise Data Platform Migration"
+description: "How we migrated a Fortune 500 manufacturer's legacy data warehouse to Azure, reducing processing time by 80% and enabling real-time analytics."
+client: "Fortune 500 Manufacturing Company"
+industry: "Manufacturing"
+services: ["Data Engineering", "Microsoft Platform"]
+results: ["80% reduction in data processing time", "40% reduction in infrastructure costs", "$2M annual savings in operational overhead", "Real-time analytics capability enabled"]
+---
+
+## The Challenge
+
+A Fortune 500 manufacturing company had been running their enterprise data warehouse on on-premises SQL Server for over a decade. The platform processed data from 12 manufacturing facilities, 200+ suppliers, and multiple ERP instances. But the system was reaching its limits.
+
+Nightly ETL jobs that once completed in 4 hours were now taking 14+ hours, regularly bleeding into business hours. The monolithic SSIS package architecture made changes risky and slow — a simple business logic modification required a 6-week development and testing cycle. And the hardware refresh cycle was approaching, with a projected $3.2M capital expenditure.
+
+The CTO's mandate was clear: migrate to the cloud, but without disrupting the 2,000+ business users who depended on daily reports and dashboards.
+
+## Our Approach
+
+### Phase 1: Assessment and Architecture (Weeks 1-4)
+
+We conducted a thorough assessment of the existing platform — cataloging 340+ SSIS packages, 1,200+ stored procedures, and 85 downstream reporting connections. We mapped data lineage, identified transformation logic, and assessed data quality baseline metrics.
+
+Our architecture recommendation: **Azure Synapse Analytics** as the core warehouse with **Azure Data Factory** for orchestration and **dbt** for transformation logic. This combination provided the scalability needed while enabling modern development practices like version-controlled transformations and automated testing.
+
+### Phase 2: Foundation and Parallel Run (Weeks 5-16)
+
+We built the Azure landing zone with proper networking, security, and governance. Then we began migrating workloads in priority order, starting with the supply chain analytics domain — the area with the highest business impact and most urgent performance problems.
+
+Each migrated workload ran in parallel with the legacy system for a minimum of two weeks, with automated reconciliation checks comparing outputs row-by-row. This approach caught 23 subtle logic discrepancies in the legacy system that had gone undetected for years.
+
+### Phase 3: Cutover and Optimization (Weeks 17-24)
+
+With parallel runs validated, we executed domain-by-domain cutovers during planned maintenance windows. Post-migration, we implemented performance optimizations that took advantage of cloud-native capabilities — materialized views, result set caching, and workload isolation for different user groups.
+
+## The Results
+
+The migrated platform processes the same data volumes in under 3 hours — an **80% reduction** in processing time. But the real transformation was in agility: the development cycle for business logic changes dropped from 6 weeks to 5 days, enabled by dbt's modular approach and automated testing.
+
+Infrastructure costs decreased by 40% compared to the projected hardware refresh, with additional savings from eliminating database administration overhead. The total annual savings exceeded **$2M**.
+
+Most importantly, the platform now supports real-time data ingestion for critical manufacturing metrics, enabling the operations team to respond to quality issues in minutes rather than the next business day.

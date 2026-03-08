@@ -1,0 +1,45 @@
+---
+title: "Security & Compliance Automation"
+description: "How we automated compliance monitoring for a healthcare organization, reducing audit preparation time from weeks to hours."
+client: "Regional Healthcare System"
+industry: "Healthcare"
+services: ["Security & Compliance", "Microsoft Platform"]
+results: ["Audit preparation reduced from 3 weeks to 4 hours", "100% continuous compliance monitoring coverage", "60% reduction in security incidents", "Zero audit findings in subsequent examination"]
+---
+
+## The Challenge
+
+A regional healthcare system operating 8 hospitals and 40+ outpatient facilities faced a familiar problem: their compliance posture was strong on paper but fragile in practice. Annual HIPAA audits consumed three weeks of their IT security team's time — manually collecting evidence, generating reports, and reconciling configurations across a sprawling Microsoft 365 and Azure environment.
+
+Between audits, configuration drift was a constant concern. A well-meaning administrator would modify a Conditional Access policy, a new application would bypass DLP controls, or a departing employee's access wouldn't be revoked promptly. Each gap was a potential violation and a risk to patient data.
+
+The CISO needed two things: continuous visibility into their compliance posture, and the ability to generate audit evidence on demand rather than scrambling before each examination.
+
+## Our Approach
+
+### Phase 1: Baseline Assessment (Weeks 1-3)
+
+We conducted a comprehensive security posture assessment against the CIS Microsoft 365 Benchmark and HIPAA Security Rule requirements. We evaluated 280+ security controls across Microsoft Entra ID, Exchange Online, SharePoint, Teams, Azure subscriptions, and Intune-managed devices.
+
+The assessment revealed 47 configuration gaps, including 12 rated as high-risk. We prioritized remediation based on patient data exposure risk and regulatory impact.
+
+### Phase 2: Remediation and Automation (Weeks 4-10)
+
+We addressed the configuration gaps systematically while simultaneously building the automation framework. Key implementations:
+
+- **Microsoft Sentinel** deployment with custom analytics rules tuned to healthcare-specific threat patterns
+- **Automated compliance scoring** using Azure Policy and custom Microsoft Graph API integrations
+- **Configuration drift detection** with automated alerts when security settings deviate from approved baselines
+- **Evidence collection automation** — scripts that generate audit-ready reports mapping controls to HIPAA requirements
+
+### Phase 3: Operationalization (Weeks 11-14)
+
+We trained the internal security team to operate the new monitoring framework, conducted tabletop exercises for incident response scenarios, and established a monthly security review cadence with automated reporting.
+
+## The Results
+
+The most immediate impact was on audit preparation. What previously consumed three weeks of intensive manual effort now takes **4 hours** — running the automated evidence collection scripts and reviewing the output. The compliance dashboard provides real-time visibility, so there are no surprises when audit season arrives.
+
+Continuous monitoring detected and auto-remediated 340+ configuration drifts in the first six months — issues that previously would have persisted until the next manual review. Security incident volume decreased by **60%**, largely due to the Conditional Access and DLP improvements.
+
+The organization achieved **zero findings** in their subsequent HIPAA audit — the first clean examination in four years. The CISO reported that the automated compliance framework had fundamentally changed the security team's relationship with compliance from reactive to proactive.

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://klearpath.com
+
+# Sitemaps
+Sitemap: https://klearpath.com/sitemap.xml

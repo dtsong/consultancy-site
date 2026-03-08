@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Klearpath Consultancy Site
 
-## Getting Started
+Enterprise marketing website for Klearpath — a data engineering and security consultancy. Built with Next.js, Tailwind CSS, and MDX.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js 16** — App Router, static generation
+- **Tailwind CSS v4** — CSS-first configuration
+- **MDX** — `next-mdx-remote/rsc` + `gray-matter` for content
+- **TypeScript** — strict mode
+- **next-sitemap** — auto-generated sitemap.xml and robots.txt
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # builds site + generates sitemap
+npm run start   # serves production build locally
+```
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repo to GitHub
+2. Import the repo at [vercel.com/new](https://vercel.com/new)
+3. Deploy — no configuration needed
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set `SITE_URL` environment variable in Vercel to your production domain for correct sitemap URLs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                    # Pages (App Router)
+│   ├── page.tsx            # Homepage
+│   ├── services/           # Services page
+│   ├── about/              # About page
+│   ├── case-studies/       # Case studies index + [slug]
+│   ├── blog/               # Blog index + [slug]
+│   └── contact/            # Contact page with form
+├── components/             # Shared UI components
+├── content/                # MDX content files
+│   ├── services/           # 4 service descriptions
+│   ├── blog/               # Blog posts
+│   └── case-studies/       # Case study write-ups
+└── lib/
+    └── content.ts          # Content reading utility
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Adding Content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### New Blog Post
+
+Create `src/content/blog/your-slug.mdx`:
+
+```mdx
+---
+title: "Post Title"
+description: "Short description for SEO and cards."
+date: "2026-03-15"
+author: "Klearpath Team"
+tags: ["Tag1", "Tag2"]
+---
+
+Your content here...
+```
+
+### New Case Study
+
+Create `src/content/case-studies/your-slug.mdx`:
+
+```mdx
+---
+title: "Case Study Title"
+description: "Short description."
+client: "Client Name"
+industry: "Industry"
+services: ["Data Engineering", "Security & Compliance"]
+results: ["Result 1", "Result 2"]
+---
+
+Your content here...
+```
+
+No code changes needed — new MDX files are automatically picked up at build time.
