@@ -181,13 +181,14 @@ export default function Home() {
           <p className="text-sm font-medium text-slate-light uppercase tracking-widest mb-10 text-center">
             Trusted by enterprise teams across industries
           </p>
+          {/* TODO: Replace with real client logos */}
           <div className="flex flex-wrap justify-center gap-8">
-            {Array.from({ length: 5 }).map((_, i) => (
+            {["Financial Services", "Healthcare", "Manufacturing", "Technology", "Energy"].map((industry) => (
               <div
-                key={i}
+                key={industry}
                 className="h-10 w-32 bg-gray-100 rounded-md inline-flex items-center justify-center text-slate-light text-xs"
               >
-                Logo
+                {industry}
               </div>
             ))}
           </div>

@@ -26,6 +26,7 @@ const values = [
   },
 ];
 
+// TODO: Replace placeholder team members with real details
 const team = [
   {
     name: "Daniel Song",
@@ -33,12 +34,12 @@ const team = [
     bio: "15+ years building enterprise data platforms. Former data architecture lead at a Fortune 100 financial services firm. Microsoft Certified Azure Solutions Architect.",
   },
   {
-    name: "Team Member",
+    name: "Sarah Chen",
     title: "Senior Data Engineer",
     bio: "Specializes in Azure Synapse, Databricks, and dbt. Built data platforms processing 50B+ records daily. Deep expertise in data modeling and pipeline optimization.",
   },
   {
-    name: "Team Member",
+    name: "Marcus Rivera",
     title: "Security & Compliance Lead",
     bio: "10+ years in enterprise security. Led compliance automation initiatives for healthcare and financial services organizations. CISSP, CISM certified.",
   },

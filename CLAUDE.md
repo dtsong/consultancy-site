@@ -12,7 +12,7 @@ Enterprise marketing website for Klearpath, a data engineering and security cons
 ## Project Structure
 
 - `src/app/` — pages using App Router
-- `src/components/` — shared components (Header, Footer, Button, Card, Container, SectionHeading, MobileMenu, ContactForm, MDXContent)
+- `src/components/` — shared components (Header, Footer, Button, Card, Container, SectionHeading, MobileMenu, MDXContent)
 - `src/content/` — MDX content files (services/, blog/, case-studies/)
 - `src/lib/content.ts` — content reading utility with typed frontmatter
 
@@ -28,7 +28,6 @@ Enterprise marketing website for Klearpath, a data engineering and security cons
 - All colors defined as `@theme` vars in globals.css — use as `text-navy`, `bg-teal`, etc.
 - Content is MDX with typed frontmatter (see interfaces in `src/lib/content.ts`)
 - New content files auto-discovered at build time — no code changes needed
-- Contact form logs to console — needs backend integration (TODO)
 - `next-sitemap` runs post-build to generate sitemap.xml
 - Header is a client component (manages mobile menu state)
 - All other pages are server components

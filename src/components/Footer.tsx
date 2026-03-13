@@ -87,12 +87,13 @@ export function Footer() {
                   hello@klearpath.com
                 </a>
               </li>
+              {/* TODO: Replace with real phone number */}
               <li>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+12025550187"
                   className="text-slate-light hover:text-teal-light transition-colors"
                 >
-                  (555) 123-4567
+                  (202) 555-0187
                 </a>
               </li>
             </ul>
