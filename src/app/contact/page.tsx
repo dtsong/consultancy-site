@@ -1,3 +1,4 @@
+import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -24,25 +25,9 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <Container>
           <div className="lg:grid lg:grid-cols-5 lg:gap-16">
-            {/* Left column - CTA */}
-            <div className="lg:col-span-3 flex items-center">
-              <div className="bg-offwhite rounded-2xl p-12 w-full text-center">
-                <h2 className="text-2xl font-heading font-bold text-navy">
-                  Send Us an Email
-                </h2>
-                <p className="text-slate-mid mt-4 leading-relaxed max-w-md mx-auto">
-                  Tell us about your project and we&apos;ll get back to you
-                  within one business day.
-                </p>
-                <div className="mt-8">
-                  <a
-                    href="mailto:hello@klearpath.com?subject=Inquiry%20from%20Klearpath.com"
-                    className="inline-block px-6 py-3 rounded-lg font-heading font-semibold text-sm tracking-wide transition-colors bg-teal text-white hover:bg-teal-dark"
-                  >
-                    hello@klearpath.com
-                  </a>
-                </div>
-              </div>
+            {/* Left column - Contact form */}
+            <div className="lg:col-span-3">
+              <ContactForm />
             </div>
 
             {/* Right column - Contact info */}
