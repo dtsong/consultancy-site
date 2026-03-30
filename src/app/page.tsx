@@ -118,12 +118,12 @@ export default function Home() {
             Klearpath helps enterprise organizations design, secure, and
             optimize their data infrastructure on the Microsoft stack.
           </p>
-          <div className="flex gap-4 mt-10">
-            <Button variant="primary" href="/services">
-              Explore Our Services
+          <div className="flex flex-wrap gap-4 mt-10">
+            <Button variant="primary" href="/assess">
+              Discover Your AI Opportunities
             </Button>
-            <Button variant="outline" href="/contact">
-              Get in Touch
+            <Button variant="outline" href="/services">
+              Explore Our Services
             </Button>
           </div>
         </Container>
@@ -191,6 +191,26 @@ export default function Home() {
                 {industry}
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Assessment CTA Section */}
+      <section className="py-20 bg-offwhite bg-grid-pattern">
+        <Container>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy">
+              Where does AI fit in your organization?
+            </h2>
+            <p className="text-lg text-slate-mid mt-4 max-w-2xl mx-auto">
+              Take our 4-minute assessment and get personalized AI use case
+              recommendations tailored to your industry and regulatory environment.
+            </p>
+            <div className="mt-8">
+              <Button variant="primary" href="/assess">
+                Take the AI Readiness Assessment
+              </Button>
+            </div>
           </div>
         </Container>
       </section>

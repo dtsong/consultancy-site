@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { submitLead } from "@/app/actions/submit-lead";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ export function ContactForm() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -17,16 +20,32 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: Integrate with backend API for form submission
-    console.log("Contact form submitted:", formData);
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(null);
+
+    const result = await submitLead({
+      name: formData.name,
+      email: formData.email,
+      company: formData.company || undefined,
+      message: formData.message,
+      source: "CONTACT_FORM",
+    });
+
+    setSubmitting(false);
+
+    if (result.success) {
+      setSubmitted(true);
+    } else {
+      setError(result.error || "Something went wrong. Please try again.");
+    }
   }
 
   function resetForm() {
     setFormData({ name: "", email: "", company: "", message: "" });
     setSubmitted(false);
+    setError(null);
   }
 
   if (submitted) {
@@ -65,6 +84,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      {error && (
+        <div className="mb-6 rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+          {error}
+        </div>
+      )}
+
       <div className="mb-6">
         <label
           htmlFor="name"
@@ -137,9 +162,10 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="w-full bg-teal text-white font-heading font-semibold py-3 px-6 rounded-lg hover:bg-teal-dark transition-colors"
+        disabled={submitting}
+        className="w-full bg-teal text-white font-heading font-semibold py-3 px-6 rounded-lg hover:bg-teal-dark transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Send Message
+        {submitting ? "Sending..." : "Send Message"}
       </button>
     </form>
   );
