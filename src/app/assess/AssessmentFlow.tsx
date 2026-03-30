@@ -317,7 +317,7 @@ function ResultsScreen({
                 style={{ width: `${dim.score}%` }}
               />
             </div>
-            <p className="text-xs text-slate-mid">{dim.tier.label} — {dim.tier.description}</p>
+            <p className="text-xs text-slate-mid">{dim.tier.label} - {dim.tier.description}</p>
           </div>
         ))}
       </div>

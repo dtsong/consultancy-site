@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Card } from "@/components/Card";
 
 export const metadata = {
-  title: "Klearpath — Enterprise Data Engineering & Security Consultancy",
+  title: "Klearpath Solutions - Data, AI & Digital Transformation Consulting",
 };
 
 const services = [
@@ -82,26 +82,65 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Data Visualization & BI",
+    description:
+      "Transform raw data into actionable insights with Power BI dashboards and self-service analytics.",
+    icon: (
+      <svg
+        width={48}
+        height={48}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <rect x={6} y={28} width={8} height={14} rx={1} />
+        <rect x={20} y={18} width={8} height={24} rx={1} />
+        <rect x={34} y={8} width={8} height={34} rx={1} />
+        <path d="M6 8l14 10 14-10" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Process Improvement",
+    description:
+      "Lean Six Sigma methodology and Smartsheet project management to eliminate waste and accelerate delivery.",
+    icon: (
+      <svg
+        width={48}
+        height={48}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <circle cx={24} cy={24} r={18} />
+        <path d="M16 24l5 5 10-10" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M24 6v4M24 38v4M6 24h4M38 24h4" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ];
 
 const differentiators = [
   {
     label: "01",
-    title: "Enterprise Experience",
+    title: "Outcomes Over Hours",
     description:
-      "Our engineers have built data platforms for Fortune 500 organizations processing billions of records. We understand the complexity of enterprise environments.",
+      "We measure success by what we deliver, not how long it takes. Clear success criteria. Full handoff to your team.",
   },
   {
     label: "02",
-    title: "AI-Accelerated",
+    title: "AI-Powered, Not AI-Hyped",
     description:
-      "We use AI tools in our own delivery work daily. We help you adopt AI where it genuinely helps — and avoid the hype-driven implementations that don't.",
+      "We use AI in our own delivery daily. We help you adopt it where it works and avoid the implementations that waste budget.",
   },
   {
     label: "03",
     title: "Microsoft-Native",
     description:
-      "Deep specialization across Azure, M365, Power Platform, and Dynamics. We're not generalists stretching into Microsoft — it's all we do.",
+      "Azure, M365, Power Platform, Dynamics. Not generalists stretching into Microsoft. It's our core expertise.",
   },
 ];
 
@@ -112,11 +151,11 @@ export default function Home() {
       <section className="bg-offwhite bg-hero-pattern py-24 md:py-32 lg:py-40">
         <Container>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-navy max-w-4xl leading-tight">
-            Enterprise data platforms, built with precision.
+            See your business - and the path forward - more clearly than ever.
           </h1>
           <p className="text-lg md:text-xl text-slate-mid mt-6 max-w-2xl leading-relaxed">
-            Klearpath helps enterprise organizations design, secure, and
-            optimize their data infrastructure on the Microsoft stack.
+            Klearpath Solutions helps organizations harness data, AI, and the
+            Microsoft platform to maximize efficiency, quality, and value.
           </p>
           <div className="flex flex-wrap gap-4 mt-10">
             <Button variant="primary" href="/assess">
@@ -134,9 +173,9 @@ export default function Home() {
         <Container>
           <SectionHeading
             title="What We Do"
-            subtitle="End-to-end data engineering and security for organizations that run on Microsoft."
+            subtitle="Data platforms, security, AI adoption, and process improvement for organizations on the Microsoft stack."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <Card
                 key={service.title}
@@ -155,7 +194,7 @@ export default function Home() {
         <Container>
           <SectionHeading
             title="Why Klearpath"
-            subtitle="We bring deep Microsoft expertise and pragmatic AI adoption to enterprise data challenges."
+            subtitle="We replace manual processes with scalable solutions and transfer ownership to your team."
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {differentiators.map((item) => (
@@ -179,11 +218,10 @@ export default function Home() {
       <section className="py-16 bg-white border-y border-gray-100">
         <Container>
           <p className="text-sm font-medium text-slate-light uppercase tracking-widest mb-10 text-center">
-            Trusted by enterprise teams across industries
+            Trusted by teams across industries
           </p>
-          {/* TODO: Replace with real client logos */}
           <div className="flex flex-wrap justify-center gap-8">
-            {["Financial Services", "Healthcare", "Manufacturing", "Technology", "Energy"].map((industry) => (
+            {["Biotech", "Healthcare", "Financial Services", "Manufacturing", "Technology"].map((industry) => (
               <div
                 key={industry}
                 className="h-10 w-32 bg-gray-100 rounded-md inline-flex items-center justify-center text-slate-light text-xs"
@@ -219,11 +257,10 @@ export default function Home() {
       <section className="py-20 bg-navy bg-grid-pattern-dark text-white text-center">
         <Container>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white">
-            Ready to transform your data infrastructure?
+            Ready to move faster with better data?
           </h2>
           <p className="text-lg text-slate-light mt-4 max-w-2xl mx-auto">
-            Let&apos;s discuss how Klearpath can help your organization build a
-            data platform that lasts.
+            Tell us about your challenges. We respond within one business day.
           </p>
           <div className="mt-8">
             <Button variant="primary" href="/contact">

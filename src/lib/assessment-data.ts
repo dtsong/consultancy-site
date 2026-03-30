@@ -59,8 +59,8 @@ export const questions: Question[] = [
     type: "single",
     options: [
       { label: "Under 500 employees", value: "small", scores: { dataReadiness: 0, aiMaturity: 0, compliancePosture: 0, orgReadiness: 2 } },
-      { label: "500 – 2,000 employees", value: "mid", scores: { dataReadiness: 1, aiMaturity: 0, compliancePosture: 0, orgReadiness: 1 } },
-      { label: "2,000 – 10,000 employees", value: "large", scores: { dataReadiness: 2, aiMaturity: 1, compliancePosture: 1, orgReadiness: 0 } },
+      { label: "500 - 2,000 employees", value: "mid", scores: { dataReadiness: 1, aiMaturity: 0, compliancePosture: 0, orgReadiness: 1 } },
+      { label: "2,000 - 10,000 employees", value: "large", scores: { dataReadiness: 2, aiMaturity: 1, compliancePosture: 1, orgReadiness: 0 } },
       { label: "10,000+ employees", value: "enterprise", scores: { dataReadiness: 3, aiMaturity: 1, compliancePosture: 2, orgReadiness: -1 } },
     ],
   },
@@ -83,10 +83,10 @@ export const questions: Question[] = [
     question: "Where is your organization on the AI journey?",
     type: "single",
     options: [
-      { label: "Exploring — we haven't started any AI initiatives yet", value: "exploring", scores: { dataReadiness: 0, aiMaturity: 1, compliancePosture: 0, orgReadiness: 1 } },
-      { label: "Experimenting — running a few proof-of-concepts", value: "experimenting", scores: { dataReadiness: 1, aiMaturity: 3, compliancePosture: 1, orgReadiness: 2 } },
-      { label: "Piloting — some AI in production, evaluating scale", value: "piloting", scores: { dataReadiness: 2, aiMaturity: 6, compliancePosture: 2, orgReadiness: 3 } },
-      { label: "Scaling — multiple AI systems in production", value: "scaling", scores: { dataReadiness: 3, aiMaturity: 8, compliancePosture: 3, orgReadiness: 3 } },
+      { label: "Exploring - we haven't started any AI initiatives yet", value: "exploring", scores: { dataReadiness: 0, aiMaturity: 1, compliancePosture: 0, orgReadiness: 1 } },
+      { label: "Experimenting - running a few proof-of-concepts", value: "experimenting", scores: { dataReadiness: 1, aiMaturity: 3, compliancePosture: 1, orgReadiness: 2 } },
+      { label: "Piloting - some AI in production, evaluating scale", value: "piloting", scores: { dataReadiness: 2, aiMaturity: 6, compliancePosture: 2, orgReadiness: 3 } },
+      { label: "Scaling - multiple AI systems in production", value: "scaling", scores: { dataReadiness: 3, aiMaturity: 8, compliancePosture: 3, orgReadiness: 3 } },
     ],
   },
   {
@@ -95,10 +95,10 @@ export const questions: Question[] = [
     question: "How mature is your data governance program?",
     type: "single",
     options: [
-      { label: "Ad hoc — no formal data governance", value: "adhoc", scores: { dataReadiness: 0, aiMaturity: 0, compliancePosture: 1, orgReadiness: 0 } },
-      { label: "Emerging — basic policies exist but inconsistently applied", value: "emerging", scores: { dataReadiness: 2, aiMaturity: 0, compliancePosture: 3, orgReadiness: 1 } },
-      { label: "Established — formal program with data stewards and cataloging", value: "established", scores: { dataReadiness: 3, aiMaturity: 1, compliancePosture: 6, orgReadiness: 2 } },
-      { label: "Optimized — automated governance with lineage and quality monitoring", value: "optimized", scores: { dataReadiness: 4, aiMaturity: 2, compliancePosture: 8, orgReadiness: 3 } },
+      { label: "Ad hoc - no formal data governance", value: "adhoc", scores: { dataReadiness: 0, aiMaturity: 0, compliancePosture: 1, orgReadiness: 0 } },
+      { label: "Emerging - basic policies exist but inconsistently applied", value: "emerging", scores: { dataReadiness: 2, aiMaturity: 0, compliancePosture: 3, orgReadiness: 1 } },
+      { label: "Established - formal program with data stewards and cataloging", value: "established", scores: { dataReadiness: 3, aiMaturity: 1, compliancePosture: 6, orgReadiness: 2 } },
+      { label: "Optimized - automated governance with lineage and quality monitoring", value: "optimized", scores: { dataReadiness: 4, aiMaturity: 2, compliancePosture: 8, orgReadiness: 3 } },
     ],
   },
   {
@@ -120,7 +120,7 @@ export const questions: Question[] = [
     question: "What's your timeline for AI adoption?",
     type: "single",
     options: [
-      { label: "Just exploring — no specific timeline", value: "exploring", scores: { dataReadiness: 0, aiMaturity: 0, compliancePosture: 0, orgReadiness: 1 } },
+      { label: "Just exploring - no specific timeline", value: "exploring", scores: { dataReadiness: 0, aiMaturity: 0, compliancePosture: 0, orgReadiness: 1 } },
       { label: "Within the next 6 months", value: "6months", scores: { dataReadiness: 0, aiMaturity: 1, compliancePosture: 0, orgReadiness: 4 } },
       { label: "Active initiative this quarter", value: "thisquarter", scores: { dataReadiness: 0, aiMaturity: 2, compliancePosture: 0, orgReadiness: 6 } },
       { label: "Board-approved program, looking for a partner now", value: "ready", scores: { dataReadiness: 0, aiMaturity: 2, compliancePosture: 0, orgReadiness: 8 } },
@@ -176,10 +176,10 @@ export function calculateScores(answers: Record<string, string | string[]>): Ass
 }
 
 export function getScoreTier(score: number): { label: string; description: string } {
-  if (score >= 75) return { label: "Advanced", description: "Strong foundation — ready for sophisticated AI initiatives" };
-  if (score >= 50) return { label: "Developing", description: "Good progress — targeted investments will unlock significant value" };
-  if (score >= 25) return { label: "Emerging", description: "Early stage — focused quick wins can build momentum" };
-  return { label: "Beginning", description: "Starting out — foundational work needed before scaling AI" };
+  if (score >= 75) return { label: "Advanced", description: "Strong foundation - ready for sophisticated AI initiatives" };
+  if (score >= 50) return { label: "Developing", description: "Good progress - targeted investments will unlock significant value" };
+  if (score >= 25) return { label: "Emerging", description: "Early stage - focused quick wins can build momentum" };
+  return { label: "Beginning", description: "Starting out - foundational work needed before scaling AI" };
 }
 
 // Use case recommendations
@@ -201,7 +201,7 @@ export const useCases: UseCase[] = [
     title: "AI Governance & Model Risk Framework",
     description: "Establish the organizational framework for responsible AI deployment: model inventory, risk tiering, validation protocols, and documentation templates aligned to your regulatory environment.",
     complexity: "Medium",
-    timeline: "4–6 weeks",
+    timeline: "4-6 weeks",
     industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
     minScoreOverall: 0,
     impact: "Foundation for every future AI initiative. Land-and-expand entry point.",
@@ -212,7 +212,7 @@ export const useCases: UseCase[] = [
     title: "Compliance Copilot for SOPs & Policies",
     description: "Deploy an AI-powered assistant trained on your Standard Operating Procedures, quality manuals, and regulatory guidelines. Employees get cited answers to compliance questions instantly.",
     complexity: "Low",
-    timeline: "4–6 weeks",
+    timeline: "4-6 weeks",
     industries: ["pharma", "meddevice", "healthcare"],
     minScoreOverall: 15,
     impact: "Massive time savings for quality and regulatory teams. Reduces SOP lookup from hours to seconds.",
@@ -223,7 +223,7 @@ export const useCases: UseCase[] = [
     title: "Regulatory Document Intelligence",
     description: "AI-powered extraction, classification, and summarization of regulatory submissions and compliance documents. Turns weeks of manual review into hours.",
     complexity: "Medium",
-    timeline: "6–8 weeks",
+    timeline: "6-8 weeks",
     industries: ["pharma", "meddevice", "finserv"],
     minScoreOverall: 20,
     impact: "Clear ROI: person-hours saved per submission cycle. Reduces regulatory review backlog.",
@@ -234,7 +234,7 @@ export const useCases: UseCase[] = [
     title: "AI Usage Policy & Prompt Library",
     description: "Develop curated, tested prompt libraries for common enterprise tasks along with usage policies, guardrails, and employee training materials tailored to your regulatory context.",
     complexity: "Low",
-    timeline: "2–3 weeks",
+    timeline: "2-3 weeks",
     industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
     minScoreOverall: 0,
     impact: "Quick win that positions you for broader AI adoption. Governs Copilot and ChatGPT Enterprise usage.",
@@ -244,7 +244,7 @@ export const useCases: UseCase[] = [
     title: "Automated Data Quality Monitoring",
     description: "Deploy AI-powered anomaly detection on your data pipelines to catch schema drift, missing values, and distribution shifts before they impact downstream reports or regulatory filings.",
     complexity: "Low",
-    timeline: "3–4 weeks",
+    timeline: "3-4 weeks",
     industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
     minScoreOverall: 25,
     impact: "Prevents costly data restatements and audit findings. Builds trust in data for AI readiness.",
@@ -254,7 +254,7 @@ export const useCases: UseCase[] = [
     title: "AI-Assisted Data Lineage & Impact Analysis",
     description: "Use AI to auto-document data lineage across your data platform and generate plain-English impact analysis for proposed changes.",
     complexity: "Medium",
-    timeline: "6–8 weeks",
+    timeline: "6-8 weeks",
     industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
     minScoreOverall: 30,
     impact: "Regulators increasingly demand data lineage. Replaces manual documentation that's always out of date.",
@@ -265,7 +265,7 @@ export const useCases: UseCase[] = [
     title: "Intelligent Data Catalog Enrichment",
     description: "Use AI to auto-generate business glossary entries, column descriptions, sensitivity tags, and data ownership suggestions for undocumented data assets.",
     complexity: "Low",
-    timeline: "3–4 weeks",
+    timeline: "3-4 weeks",
     industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
     minScoreOverall: 20,
     impact: "Addresses the #1 data governance gap: thousands of undocumented tables. AI-assisted with human review.",
@@ -275,7 +275,7 @@ export const useCases: UseCase[] = [
     title: "Automated Change Control Classification",
     description: "AI triages and classifies change requests by regulatory impact level, routing them to the correct review workflow. Eliminates change control backlogs.",
     complexity: "Low",
-    timeline: "3–4 weeks",
+    timeline: "3-4 weeks",
     industries: ["pharma", "meddevice"],
     minScoreOverall: 15,
     impact: "Universal pain point in GxP environments. Straightforward classification that shows immediate ROI.",
@@ -285,7 +285,7 @@ export const useCases: UseCase[] = [
     title: "Automated Audit Evidence Collection",
     description: "AI agent that traverses your systems to collect, organize, and pre-format evidence packages for SOC 2, HITRUST, GxP, or regulatory audits.",
     complexity: "Medium",
-    timeline: "6–8 weeks",
+    timeline: "6-8 weeks",
     industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
     minScoreOverall: 35,
     impact: "Audit prep consumes weeks of senior staff time multiple times per year. Automates the tedious parts.",
@@ -295,11 +295,31 @@ export const useCases: UseCase[] = [
     title: "Clinical/Financial Data De-identification Pipeline",
     description: "Automated pipeline to detect and redact PII/PHI from datasets before use in analytics, AI training, or cross-border transfers. Includes validation reporting.",
     complexity: "Medium",
-    timeline: "4–6 weeks",
+    timeline: "4-6 weeks",
     industries: ["pharma", "healthcare", "finserv", "insurance"],
     minScoreOverall: 25,
     impact: "Unlocks data for AI training and analytics while maintaining privacy compliance.",
     regulatoryNote: "Addresses HIPAA Safe Harbor, GDPR anonymization requirements",
+  },
+  {
+    id: "bi-modernization",
+    title: "Executive Dashboard and BI Modernization",
+    description: "Replace scattered spreadsheets and static reports with a unified Power BI analytics platform. Automated data refreshes, self-service exploration, and executive scorecards that drive decisions.",
+    complexity: "Low",
+    timeline: "3-5 weeks",
+    industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
+    minScoreOverall: 10,
+    impact: "Immediate visibility into KPIs. Replaces hours of manual report building with automated, trustworthy dashboards.",
+  },
+  {
+    id: "process-optimization",
+    title: "Process Optimization with Data-Driven Insights",
+    description: "Apply Lean Six Sigma methodology to identify bottlenecks, eliminate waste, and redesign workflows. Combine process analysis with data instrumentation to measure improvements and sustain gains.",
+    complexity: "Medium",
+    timeline: "4-8 weeks",
+    industries: ["pharma", "meddevice", "finserv", "insurance", "healthcare", "other"],
+    minScoreOverall: 5,
+    impact: "Measurable cost and time savings. Builds a culture of continuous improvement backed by data.",
   },
 ];
 

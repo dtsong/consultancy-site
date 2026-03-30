@@ -2,7 +2,7 @@ import { Container } from "@/components/Container";
 import { AssessmentFlow } from "./AssessmentFlow";
 
 export const metadata = {
-  title: "AI Readiness Assessment — Klearpath",
+  title: "AI Readiness Assessment - Klearpath",
   description:
     "Discover your organization's AI opportunities in 4 minutes. Get personalized use case recommendations for regulated industries.",
 };

@@ -18,18 +18,18 @@ const sourceSans = Source_Sans_3({
 
 export const metadata: Metadata = {
   title: {
-    default: "Klearpath — Enterprise Data Engineering & Security Consultancy",
-    template: "%s | Klearpath",
+    default: "Klearpath Solutions - Data, AI & Digital Transformation Consulting",
+    template: "%s | Klearpath Solutions",
   },
   description:
-    "Klearpath helps enterprise organizations build secure, scalable data platforms on the Microsoft stack. Data engineering, security & compliance, and AI-accelerated delivery.",
+    "Klearpath Solutions helps organizations harness data, AI, and the Microsoft platform to maximize efficiency, quality, and value.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Klearpath",
-    title: "Klearpath — Enterprise Data Engineering & Security Consultancy",
+    siteName: "Klearpath Solutions",
+    title: "Klearpath Solutions - Data, AI & Digital Transformation Consulting",
     description:
-      "Klearpath helps enterprise organizations build secure, scalable data platforms on the Microsoft stack.",
+      "Klearpath Solutions helps organizations harness data, AI, and the Microsoft platform to maximize efficiency, quality, and value.",
   },
   robots: {
     index: true,

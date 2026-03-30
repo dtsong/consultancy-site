@@ -5,43 +5,37 @@ import { Button } from "@/components/Button";
 export const metadata = {
   title: "About",
   description:
-    "Learn about Klearpath — our story, values, and the team behind enterprise data engineering and security consulting.",
+    "Learn about Klearpath Solutions, our story, values, and the team behind our data, AI, and digital transformation consulting.",
 };
 
 const values = [
   {
     title: "Outcomes Over Hours",
     description:
-      "We measure success by what we deliver, not how long it takes. If we can solve your problem in two weeks instead of two months, that\u2019s what we\u2019ll recommend.",
+      "We measure success by what we deliver, not how long it takes. If we can solve your problem in two weeks instead of two months, that's what we'll recommend.",
   },
   {
-    title: "Transfer, Don\u2019t Trap",
+    title: "Transfer, Don't Trap",
     description:
-      "Every engagement includes knowledge transfer. Your team should be able to operate, maintain, and extend everything we build \u2014 without calling us.",
+      "Every engagement includes knowledge transfer. Your team should be able to operate, maintain, and extend everything we build without calling us.",
   },
   {
     title: "Honest Technical Advice",
     description:
-      "We\u2019ll tell you when a simpler solution will work. We\u2019ll push back when an approach won\u2019t scale. We\u2019d rather lose a project than set you up for failure.",
+      "We'll tell you when a simpler solution will work. We'll push back when an approach won't scale. We'd rather lose a project than set you up for failure.",
   },
 ];
 
-// TODO: Replace placeholder team members with real details
 const team = [
   {
-    name: "Daniel Song",
-    title: "Principal Consultant",
-    bio: "15+ years building enterprise data platforms. Former data architecture lead at a Fortune 100 financial services firm. Microsoft Certified Azure Solutions Architect.",
+    name: "Matthew Dillane",
+    title: "Founder",
+    bio: "15+ years in the biotech industry. ASQ Certified Manager of Quality/Organizational Excellence, Six Sigma Black Belt, and Certified Quality Auditor. Drives Klearpath's focus on process improvement and quality-driven digital transformation.",
   },
   {
-    name: "Sarah Chen",
-    title: "Senior Data Engineer",
-    bio: "Specializes in Azure Synapse, Databricks, and dbt. Built data platforms processing 50B+ records daily. Deep expertise in data modeling and pipeline optimization.",
-  },
-  {
-    name: "Marcus Rivera",
-    title: "Security & Compliance Lead",
-    bio: "10+ years in enterprise security. Led compliance automation initiatives for healthcare and financial services organizations. CISSP, CISM certified.",
+    name: "Marcus Wilson",
+    title: "Consulting Partner",
+    bio: "Sacramento-based business and technology consultant. UC Davis MBA, Cal Poly SLO BS in Business Administration. Brings cross-functional expertise in operations, strategy, and client delivery.",
   },
 ];
 
@@ -52,8 +46,8 @@ export default function AboutPage() {
       <section className="py-20 bg-offwhite bg-grid-pattern">
         <Container>
           <SectionHeading
-            title="About Klearpath"
-            subtitle="We help enterprise organizations build data platforms they can trust."
+            title="About Klearpath Solutions"
+            subtitle="We help organizations see their business and the path forward more clearly than ever."
             centered
           />
         </Container>
@@ -67,30 +61,22 @@ export default function AboutPage() {
               Our Story
             </h2>
             <p className="text-lg text-slate-dark leading-relaxed mb-6">
-              Klearpath was founded by data engineers who spent years inside
-              Fortune 500 organizations building enterprise data platforms. We
-              lived the daily reality of complex migrations, strict compliance
-              requirements, and technology decisions that had to hold up for
-              years, not months.
+              Klearpath Solutions exists to replace slow, manual processes with
+              scalable automated solutions that your team can own and operate.
             </p>
             <p className="text-lg text-slate-dark leading-relaxed mb-6">
-              Over time, we saw how much value was lost to poor vendor
-              implementations, overcomplicated architectures, and consultancies
-              that prioritized billable hours over outcomes. Projects that should
-              have taken weeks dragged on for quarters. Teams were left with
-              systems they didn&apos;t understand and couldn&apos;t maintain.
+              Too many organizations invest in technology that never delivers.
+              Projects drag on. Teams get systems they can&apos;t maintain.
+              Data sits unused while decisions get made on gut feel.
             </p>
             <p className="text-lg text-slate-dark leading-relaxed mb-6">
-              We built Klearpath to be the consultancy we wished we&apos;d had:
-              technically deep, pragmatically focused, and genuinely invested in
-              leaving clients better than we found them. We bring the same rigor
-              we applied inside the enterprise &mdash; but without the overhead,
-              politics, or misaligned incentives.
+              We combine data engineering, the Microsoft platform, Lean Six Sigma,
+              and AI to deliver measurable improvements. Not recommendations.
+              Not slide decks. Working solutions with clear ROI.
             </p>
             <p className="text-lg text-slate-dark leading-relaxed mb-6">
-              Every engagement ends with your team owning and understanding the
-              solution &mdash; not dependent on us. That&apos;s not just a
-              philosophy; it&apos;s how we structure every project from day one.
+              Every engagement ends with your team owning the solution. That&apos;s
+              how we structure every project from day one.
             </p>
           </div>
         </Container>
@@ -121,10 +107,10 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             title="Our Team"
-            subtitle="Microsoft-certified engineers with deep enterprise experience."
+            subtitle="Experienced consultants with deep expertise in data, quality, and digital transformation."
             centered
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {team.map((member) => (
               <div
                 key={member.name + member.title}
@@ -166,7 +152,7 @@ export default function AboutPage() {
             Let&apos;s Work Together
           </h2>
           <p className="text-lg text-slate-light mt-4">
-            We&apos;d love to hear about your data challenges.
+            We&apos;d love to hear about your challenges.
           </p>
           <div className="mt-8">
             <Button variant="primary" href="/contact">
