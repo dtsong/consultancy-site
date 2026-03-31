@@ -254,9 +254,12 @@ function ResultsScreen({
   answers: Record<string, string | string[]>;
 }) {
   const [showCapture, setShowCapture] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
   const [captured, setCaptured] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [captureData, setCaptureData] = useState({ name: "", email: "", company: "" });
+
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
 
   const overallTier = getScoreTier(scores.overall);
 
@@ -373,6 +376,27 @@ function ResultsScreen({
               A Klearpath advisor will reach out within one business day to discuss your results.
             </p>
           </div>
+        ) : showBooking && calendlyUrl ? (
+          <div>
+            <h3 className="text-xl font-heading font-semibold text-white mb-6">
+              Book a Strategy Session
+            </h3>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <iframe
+                src={`${calendlyUrl}?hide_gdpr_banner=1&hide_landing_page_details=1`}
+                width="100%"
+                height="630"
+                frameBorder="0"
+                title="Schedule a strategy session with Klearpath"
+              />
+            </div>
+            <button
+              onClick={() => setShowBooking(false)}
+              className="text-slate-light hover:text-white text-sm mt-4 transition-colors cursor-pointer"
+            >
+              Back to results
+            </button>
+          </div>
         ) : showCapture ? (
           <form onSubmit={handleCapture} className="max-w-md mx-auto">
             <h3 className="text-xl font-heading font-semibold text-white mb-6">
@@ -430,12 +454,21 @@ function ResultsScreen({
               >
                 Get Full Report
               </button>
-              <a
-                href="/contact"
-                className="border border-white/30 text-white font-heading font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors"
-              >
-                Book a Strategy Session
-              </a>
+              {calendlyUrl ? (
+                <button
+                  onClick={() => setShowBooking(true)}
+                  className="border border-white/30 text-white font-heading font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+                >
+                  Book a Strategy Session
+                </button>
+              ) : (
+                <a
+                  href="/contact"
+                  className="border border-white/30 text-white font-heading font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors"
+                >
+                  Book a Strategy Session
+                </a>
+              )}
             </div>
           </div>
         )}
